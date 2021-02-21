@@ -16,7 +16,7 @@ start1 = True
 start2 = False
 game_over = True
 
-start_delay = 0
+start_delay = 2
 
 # a counter to delay between changes
 delay_timer = 0
@@ -25,7 +25,7 @@ image_number = 1
 
 
 player = mod.Actor(IMG_PREFIX+"-down-1")
-house = mod.Actor('houseoverworld')
+house = mod.Actor('houseoverworldbig')
 stairs = mod.Actor('stairs')
 speach = mod.Actor('dialoguebox')
 
@@ -64,7 +64,7 @@ def update():
         in_house = True
 
     touchingStairs = player.colliderect(stairs)
-    if touchingStairs:
+    if touchingStairs and in_house:
         player.pos = 500, 520
         in_house = False
 
