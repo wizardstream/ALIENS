@@ -7,6 +7,7 @@ mod = sys.modules['__main__']
 TITLE = "ALIENS..."
 WIDTH = 1000
 HEIGHT = 1000
+FONT = 'calibri'
 
 IMG_PREFIX = "player"
 
@@ -47,10 +48,10 @@ def place_actors():
 
 
 def start_music():
-    mod.sounds.background.play()
+    mod.music.play('background')
 
 def stop_music():
-    mod.sounds.background.stop()
+    mod.music.stop()
 
 def kai():
     global k
@@ -117,11 +118,11 @@ def draw():
 
     if start1:
         mod.screen.fill((0, 0, 0))
-        mod.screen.draw.text('K-NOX GAMES PRESENTS:', (250, 400), fontsize=64, color="green", background="orange")
+        mod.screen.draw.text('K-NOX GAMES PRESENTS:', (250, 400), fontsize=64, color="green", background="orange", fontname=FONT)
         mod.clock.schedule(nextStart1, start_delay)
     elif start2:
         mod.screen.fill((0, 0, 0))
-        mod.screen.draw.text('ALIENS', (400, 400),  fontsize=64, color='green', background="orange")
+        mod.screen.draw.text('ALIENS', (400, 400),  fontsize=64, color='green', background="orange", fontname=FONT)
         mod.clock.schedule(nextStart2, start_delay)
     else:
         mod.screen.fill((4, 139, 87))
@@ -131,8 +132,8 @@ def draw():
 
     if not game_over and not playerTouchingHouse:
         mod.screen.fill((4, 139, 87))
-        mod.screen.draw.text('x: ' + str(player.x), (40, 40))
-        mod.screen.draw.text('y: ' + str(player.y), (40, 60))
+        mod.screen.draw.text('x: ' + str(player.x), (40, 40), fontname=FONT)
+        mod.screen.draw.text('y: ' + str(player.y), (40, 60), fontname=FONT)
 
         house.draw()
         player.draw()
@@ -140,20 +141,20 @@ def draw():
     if not game_over and playerTouchingHouse:
         house.draw()
         player.draw()
-        mod.screen.draw.text('x: ' + str(player.x), (40, 40))
-        mod.screen.draw.text('y: ' + str(player.y), (40, 60))
-        mod.screen.draw.text('SPACE TO OPEN DOOR', (40, 80))
+        mod.screen.draw.text('x: ' + str(player.x), (40, 40), fontname=FONT)
+        mod.screen.draw.text('y: ' + str(player.y), (40, 60), fontname=FONT)
+        mod.screen.draw.text('SPACE TO OPEN DOOR', (40, 80), fontname=FONT)
 
     if not game_over and in_house:
         mod.screen.fill((165, 42, 42))
         stairs.draw()
         player.draw()
         speach.draw()
-        mod.screen.draw.text('YOU ARE IN THE CASTLE.', (400, 100), fontsize=20, color='green')
+        mod.screen.draw.text('YOU ARE IN THE CASTLE.', (400, 100), fontsize=20, color='green', fontname=FONT)
 
         mod.clock.schedule(kai, 1)
-        mod.screen.draw.text('x: ' + str(player.x), (40, 40))
-        mod.screen.draw.text('y: ' + str(player.y), (40, 60))
+        mod.screen.draw.text('x: ' + str(player.x), (40, 40), fontname=FONT)
+        mod.screen.draw.text('y: ' + str(player.y), (40, 60), fontname=FONT)
 
 
 
