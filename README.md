@@ -1,6 +1,6 @@
 # ALIENS!
 
-You are just a boy wen you discover about kingdom 51.
+You are just a boy wen you find out about kingdom 51.
 
 Kingdom 51 is just like the kingdom you live in, but it is holding aliens captive! 
 
