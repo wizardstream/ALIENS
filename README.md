@@ -8,6 +8,6 @@ Your job is to save the Aliens and return the to Aderidian!
 
 # CREDITS
 
-Directed by Wizerdstream
+Directed by Wizardstream
 
 Produced by K-nox games.
