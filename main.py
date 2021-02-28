@@ -29,8 +29,8 @@ player = mod.Actor(IMG_PREFIX+"-down-1")
 house = mod.Actor('houseoverworldbig')
 stairs = mod.Actor('stairs')
 speach = mod.Actor('dialoguebox')
-
-
+arrow = mod.Actor('smallarrow')
+sword = mod.Actor('sword2')
 player.x = 100
 player.y = 100
 
@@ -45,6 +45,11 @@ def place_actors():
     stairs.pos = 500, 850
 
     speach.pos = 500, 100
+
+    arrow.pos = 450, 850
+
+    sword.pos = 500, 400
+
 
 
 def start_music():
@@ -148,6 +153,8 @@ def draw():
     if not game_over and in_house:
         mod.screen.fill((165, 42, 42))
         stairs.draw()
+        arrow.draw()
+        sword.draw()
         player.draw()
         speach.draw()
         mod.screen.draw.text('YOU ARE IN THE CASTLE.', (400, 100), fontsize=20, color='green', fontname=FONT)
