@@ -58,7 +58,7 @@ def start_music():
 def stop_music():
     mod.music.stop()
 
-def kai():
+def kCheck():
     global k
     k = False
 
@@ -159,7 +159,7 @@ def draw():
         speach.draw()
         mod.screen.draw.text('YOU ARE IN THE CASTLE.', (400, 100), fontsize=20, color='green', fontname=FONT)
 
-        mod.clock.schedule(kai, 1)
+        mod.clock.schedule(kCheck, 1)
         mod.screen.draw.text('x: ' + str(player.x), (40, 40), fontname=FONT)
         mod.screen.draw.text('y: ' + str(player.y), (40, 60), fontname=FONT)
 
